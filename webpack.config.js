@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
   output: {
@@ -30,7 +29,6 @@ module.exports = {
     }),
     new BundleAnalyzerPlugin({
       openAnalyzer:false
-    }),
-    new DashboardPlugin()
+    })
   ],
 };
