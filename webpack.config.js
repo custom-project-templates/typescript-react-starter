@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -5,7 +6,7 @@ const isDev = process.env.NODE_ENV !== 'production';
 module.exports = {
   mode: isDev ? 'development' : 'production',
   entry: {
-    index: './src/index.tsx',
+    index: './src/index.tsx'
   },
   module: {
     rules: [
@@ -14,7 +15,7 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         },
-        exclude:/node_modules/
+        exclude: /node_modules/
       },
       {
         test: /.css$/,
@@ -26,26 +27,24 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name:"[name].[ext]"
-            },
-          },
-        ],
+              name: '[name].[ext]'
+            }
+          }
+        ]
       }
-    ],
+    ]
   },
   resolve: {
-    extensions: ['.ts', '.tsx','.js','.jsx'], // cannot omit .js
+    extensions: ['.ts', '.tsx', '.js', '.jsx'] // cannot omit .js
   },
-  devServer: {
-
-  },
+  devServer: {},
   plugins: [
     new HtmlWebpackPlugin({
-      template:'./src/index.html',
-      filename:'./index.html'
+      template: './src/index.html',
+      filename: './index.html'
     }),
     new BundleAnalyzerPlugin({
-      openAnalyzer:false
+      openAnalyzer: false
     })
-  ],
+  ]
 };
