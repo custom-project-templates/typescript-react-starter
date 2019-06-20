@@ -1,5 +1,5 @@
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import Index from './pages';
 
-ReactDOM.render(<Index/>, document.getElementById('box'));
+ReactDOM.render(<Index />, document.getElementById('app'));

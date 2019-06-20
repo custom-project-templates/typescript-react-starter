@@ -1,16 +1,9 @@
-import * as React from 'react';
+import React, { FunctionComponent } from 'react';
 
-class Index extends React.Component<any,any> {
-  state = {
+interface IProps {}
 
-  }
-  render() {
-    return (
-      <div>
-        Index Page
-      </div>
-    );
-  }
-}
+const Index: FunctionComponent<IProps> = ({}) => {
+  return <div>Index Page</div>;
+};
 
 export default Index;
