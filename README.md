@@ -5,8 +5,10 @@
 
 other libraries:
 1. `styled-components` and related babel plugin
+1. `@material-ui/core` and `@material-ui/styles`
+1. `@material-ui/cions` and babel setup for reduce bundle size
 
 ### Usage
 1. `npm install`
-2. `npm run dev`
-3. `npm run test` for test
+1. `npm run dev`
+1. `npm run test` for test

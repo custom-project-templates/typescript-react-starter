@@ -8,6 +8,9 @@ module.exports = {
   entry: {
     index: './src/index.tsx'
   },
+  output: {
+    publicPath: '/'
+  },
   module: {
     rules: [
       {
@@ -37,7 +40,9 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'] // cannot omit .js
   },
-  devServer: {},
+  devServer: {
+    historyApiFallback: true
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
