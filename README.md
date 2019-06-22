@@ -6,7 +6,7 @@
 other libraries:
 1. `styled-components` and related babel plugin
 1. `@material-ui/core` and `@material-ui/styles`
-1. `@material-ui/cions` and babel setup for reduce bundle size
+1. `@material-ui/icons` and babel setup for reducing bundle size
 
 ### Usage
 1. `npm install`
