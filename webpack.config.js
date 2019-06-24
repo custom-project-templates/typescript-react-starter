@@ -45,7 +45,8 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx'] // cannot omit .js
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    open: true
   },
   plugins: [
     new HtmlWebpackPlugin({
