@@ -1,7 +1,7 @@
 {
-  "name": "react-typescript-starter",
+  "name": "typescript-react-starter",
   "version": "1.2.0",
-  "description": "",
+  "description": "A starter for typescript and react using babel for compiling",
   "main": "index.js",
   "keywords": [
     "react",
@@ -10,7 +10,7 @@
   ],
   "author": "xhmm",
   "license": "MIT",
-  "repository": "https://github.com/XHMM/react-template-ts",
+  "repository": "https://github.com/XHMM/typescript-react-starter",
   "scripts": {
     "dev": "webpack-dev-server --mode=development",
     "build": "webpack --mode=production",
