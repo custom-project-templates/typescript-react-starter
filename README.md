@@ -1,5 +1,5 @@
 ## 🍜 introduction
-This is a react project template for typescript users, details below:
+This is a react template(or called starter) for typescript users, details below:
 
 1. use `babel` for `typescript` compile
 1. use `jest` and `@testing-library/react` for test
@@ -12,7 +12,7 @@ This is a react project template for typescript users, details below:
 
 ## 🥡 install
 Option one (automatically):
-1. use [this cli](https://github.com/XHMM/trs) to automatically create react dev environment.
+1. use corresponding **[CLI](https://github.com/XHMM/trs)** to conveniently fetch and extract this starter.
 1. then `cd folder` and run `npm install`
 
 Option two (manually):
