@@ -12,8 +12,8 @@
   "license": "MIT",
   "repository": "https://github.com/XHMM/typescript-react-starter",
   "scripts": {
-    "dev": "webpack-dev-server --mode=development",
-    "build": "webpack --mode=production",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode=development",
+    "build": "cross-env NODE_ENV=production webpack --mode=production",
     "test": "jest",
     "eslint:fix": "eslint ./ --fix --ext .js,.tsx,.jsx --ignore-path .gitignore "
   },
