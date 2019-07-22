@@ -11,6 +11,7 @@ module.exports = {
   output: {
     publicPath: '/'
   },
+  devtool: isDev ? 'source-map' : 'none',
   module: {
     rules: [
       {
