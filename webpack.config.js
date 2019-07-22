@@ -3,15 +3,33 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const isDev = process.env.NODE_ENV !== 'production';
+const mode = isDev ? 'development' : 'production';
+const devtool = isDev ? 'source-map' : 'none';
+const publicPath = isDev ? '/' : '/';
+
+const commonPlugins = [
+  new HtmlWebpackPlugin({
+    template: './src/index.html',
+    filename: './index.html'
+  })
+];
+const devPlugins = [
+  new BundleAnalyzerPlugin({
+    openAnalyzer: false
+  })
+];
+const prodPlugins = [];
+const plugins = isDev ? [...commonPlugins, ...devPlugins] : [...commonPlugins, ...prodPlugins];
+
 module.exports = {
-  mode: isDev ? 'development' : 'production',
+  mode,
   entry: {
     index: './src/index.tsx'
   },
   output: {
-    publicPath: '/'
+    publicPath
   },
-  devtool: isDev ? 'source-map' : 'none',
+  devtool,
   module: {
     rules: [
       {
@@ -49,13 +67,5 @@ module.exports = {
     historyApiFallback: true,
     open: true
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: './index.html'
-    }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false
-    })
-  ]
+  plugins
 };
