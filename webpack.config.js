@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const isDev = process.env.NODE_ENV !== 'production';
 const mode = isDev ? 'development' : 'production';
@@ -11,7 +12,8 @@ const commonPlugins = [
   new HtmlWebpackPlugin({
     template: './src/index.html',
     filename: './index.html'
-  })
+  }),
+  new CleanWebpackPlugin()
 ];
 const devPlugins = [
   new BundleAnalyzerPlugin({
