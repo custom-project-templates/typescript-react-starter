@@ -9,7 +9,7 @@ This is a react template(or called starter) for typescript users, details below:
     - `styled-components` and related babel plugin
     - `@material-ui/core`, `@material-ui/styles`
     - `@material-ui/icons` and babel setup for reducing bundle size
-
+    - `react-router-dom`
 ## 🥡 install
 Option one (automatically):
 1. use corresponding **[CLI](https://github.com/XHMM/trs)** to conveniently fetch and extract this starter.
