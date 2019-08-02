@@ -4,10 +4,10 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const isDev = process.env.NODE_ENV !== 'production';
+
 const mode = isDev ? 'development' : 'production';
 const devtool = isDev ? 'source-map' : 'none';
 const publicPath = isDev ? '/' : '/';
-
 const commonPlugins = [
   new HtmlWebpackPlugin({
     template: './src/index.html',
