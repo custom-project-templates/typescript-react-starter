@@ -1,7 +1,13 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 
 const Index: FunctionComponent<IProps> = ({}) => {
-  return <div>Index Page</div>;
+  const [count, setCount] = useState(0);
+  return <>
+    <div>Index Pag</div>
+    <div>{count}</div>
+    <button onClick={() => {setCount(count => count-1)}}> - </button>
+    <button onClick={() => {setCount(count => count+1)}}> + </button>
+  </>;
 };
 
 interface IProps {}

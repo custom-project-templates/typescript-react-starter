@@ -26,7 +26,7 @@ const plugins = isDev ? [...commonPlugins, ...devPlugins] : [...commonPlugins, .
 module.exports = {
   mode,
   entry: {
-    index: './src/index.tsx'
+    index: ['react-hot-loader/patch', './src/index.tsx']
   },
   output: {
     publicPath
@@ -63,11 +63,15 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'] // cannot omit .js
+    extensions: ['.ts', '.tsx', '.js', '.jsx'], // cannot omit .js
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
   },
   devServer: {
     historyApiFallback: true,
-    open: true
+    open: true,
+    hot: true
   },
   plugins
 };

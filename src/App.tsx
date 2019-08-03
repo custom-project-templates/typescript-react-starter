@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader/root';
 import React, { FunctionComponent } from 'react';
 import Index from './pages';
 
@@ -11,4 +12,4 @@ const App: FunctionComponent<IProps> = ({}) => {
 
 interface IProps {}
 
-export default App;
+export default hot(App);
