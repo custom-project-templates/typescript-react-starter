@@ -5,8 +5,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const isDev = process.env.NODE_ENV !== 'production';
 
-const mode = isDev ? 'development' : 'production';
-const devtool = isDev ? 'source-map' : 'none';
 const publicPath = isDev ? '/' : '/';
 const commonPlugins = [
   new HtmlWebpackPlugin({
@@ -24,14 +22,20 @@ const prodPlugins = [];
 const plugins = isDev ? [...commonPlugins, ...devPlugins] : [...commonPlugins, ...prodPlugins];
 
 module.exports = {
-  mode,
+  mode: isDev ? 'development' : 'production',
   entry: {
     index: ['react-hot-loader/patch', './src/index.tsx']
   },
   output: {
     publicPath
   },
-  devtool,
+  devServer: {
+    historyApiFallback: true,
+    open: true,
+    hot: true,
+    publicPath
+  },
+  devtool: isDev ? 'source-map' : 'none',
   module: {
     rules: [
       {
@@ -67,11 +71,6 @@ module.exports = {
     alias: {
       'react-dom': '@hot-loader/react-dom'
     }
-  },
-  devServer: {
-    historyApiFallback: true,
-    open: true,
-    hot: true
   },
   plugins
 };
