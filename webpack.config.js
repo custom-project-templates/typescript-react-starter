@@ -2,6 +2,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -16,7 +17,8 @@ const commonPlugins = [
 const devPlugins = [
   new BundleAnalyzerPlugin({
     openAnalyzer: false
-  })
+  }),
+  new FriendlyErrorsWebpackPlugin()
 ];
 const prodPlugins = [];
 const plugins = isDev ? [...commonPlugins, ...devPlugins] : [...commonPlugins, ...prodPlugins];
@@ -33,7 +35,10 @@ module.exports = {
     historyApiFallback: true,
     open: true,
     hot: true,
-    publicPath
+    publicPath,
+    quiet: true,
+    compress: true,
+    overlay: true
   },
   devtool: isDev ? 'source-map' : 'none',
   module: {
