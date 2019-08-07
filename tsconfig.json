@@ -5,11 +5,13 @@
     "moduleResolution": "node",
     "lib": ["dom", "es6", "es7"],
     "jsx": "react",
-    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true, // don't omit this, or react-testing-library will fail "Cannot read property 'createElement' of undefined"
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "alwaysStrict": true
+    "alwaysStrict": true,
+    "skipLibCheck": true,
+    "noEmit": true
   },
-  "include": ["src"],
+  "include": ["src", "__tests__"],
   "exclude": ["node_modules"]
 }

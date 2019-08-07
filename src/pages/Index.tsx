@@ -5,7 +5,7 @@ const Index: FunctionComponent<IProps> = ({}) => {
 
   return (
     <>
-      <div>Index Pag</div>
+      <div>Index Page</div>
       <button
         onClick={() => {
           setCount(count => count - 1);

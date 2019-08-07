@@ -1,8 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Index from '../../src/pages';
+import '@testing-library/jest-dom/extend-expect';
+import Index from '../../src/pages/Index';
 
-test('index page should have "Index" word', () => {
+test('should contain "Index Page"', () => {
   const { getByText } = render(<Index />);
-  expect(getByText('Index Page')).toBeTruthy();
+  expect(getByText('Index Page')).toHaveTextContent('Index Page');
 });
