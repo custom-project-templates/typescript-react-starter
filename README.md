@@ -2,14 +2,15 @@
 
 This is a react template(or called starter) for typescript users, details below:
 
-1. use `babel` for `typescript` compile
-2. use `jest` and `@testing-library/react` for test
-3. use [this repo](https://github.com/XHMM/my-config-files) for lint setup
-4. and includes these libraries:
-   - `styled-components` and related babel plugin
-   - `@material-ui/core`, `@material-ui/styles`
-   - `@material-ui/icons` and babel setup for reducing bundle size
-   - `react-router-dom`
+- use `babel` for `typescript` compile
+- use `jest` and `@testing-library/react` for test
+- use [this repo](https://github.com/XHMM/my-config-files) for lint setup
+- and includes these libraries:
+  - `styled-components` and related babel plugin
+  - `@material-ui/core`, `@material-ui/styles`
+  - `@material-ui/icons` and babel setup for reducing bundle size
+  - `react-router-dom`
+- support `sass`
 
 ## 🥡 install
 
@@ -25,13 +26,24 @@ Option two (manually):
 
 ## 🍱 scripts
 
-1. `npm run dev` to start dev server
-2. `npm run build` to build
-3. `npm run test` for test
-4. `npm run eslint:fix` to automatically fix every fixable problems
+- `npm run dev` to start webpack-dev-server
+
+- `npm run build` to build
+
+- `npm run test` for test
+
+- `npm run eslint:fix` to automatically fix every fixable problems
 
 ## 🥗notes
 
-1. use `require` instead `import` when import images , or ts compiler will complain "cannot find module xx.jpg" ：
+- use alias to import files, current there are four alias available:
 
-   `const BearImg = require('../images/bear.jpg');`
+  ```js
+  import Img from '@images/apple.jpg';
+  import Button from '@components/Button';
+  import useCounter from '@hooks/useCounter';
+  import Index from '@pages/index/Index';
+  ```
+
+  
+
