@@ -12,10 +12,10 @@
   "license": "MIT",
   "repository": "https://github.com/XHMM/typescript-react-starter",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode=development",
-    "build": "cross-env NODE_ENV=production webpack --mode=production",
+    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "build": "cross-env NODE_ENV=production webpack",
     "test": "jest",
-    "eslint:fix": "eslint ./ --fix --ext .js,.tsx,.jsx --ignore-path .gitignore"
+    "eslint-fix": "eslint ./ --fix --ext .js,.tsx,.jsx --ignore-path .gitignore"
   },
   "dependencies": {
     "@babel/runtime": "7.5.5",
@@ -43,6 +43,7 @@
     "@types/react-dom": "16.8.5",
     "@types/react-router-dom": "^4.3.4",
     "@types/styled-components": "4.1.18",
+    "add-asset-html-webpack-plugin": "^3.1.3",
     "autoprefixer": "^9.6.1",
     "babel-loader": "8.0.6",
     "babel-plugin-import": "^1.12.0",
@@ -64,9 +65,9 @@
     "postcss-loader": "^3.0.0",
     "prettier": "1.18.2",
     "prettier-config-xhmm": "0.0.5",
-    "thread-loader": "^2.1.2",
     "sass-loader": "^7.1.0",
     "style-loader": "1.0.0",
+    "thread-loader": "^2.1.2",
     "ts-jest": "24.0.2",
     "ts-loader": "6.0.4",
     "typescript": "3.5.3",

@@ -26,13 +26,10 @@ Option two (manually):
 
 ## 🍱 scripts
 
-- `npm run dev` to start webpack-dev-server
-
+- `npm run start` to start webpack-dev-server
 - `npm run build` to build
-
-- `npm run test` for test
-
-- `npm run eslint:fix` to automatically fix every fixable problems
+- `npm run test` to test
+- `npm run eslint-fix` to automatically fix all fixable errors
 
 ## 🥗notes
 
@@ -44,6 +41,3 @@ Option two (manually):
   import useCounter from '@hooks/useCounter';
   import Index from '@pages/index/Index';
   ```
-
-  
-

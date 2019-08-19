@@ -1,15 +1,26 @@
 /* eslint-disable */
 const path = require('path');
+const fs = require('fs');
+const { execSync } = require('child_process');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 
 const isDev = process.env.NODE_ENV !== 'production';
-
+const outputDir =  path.join(__dirname, 'build');
+const dllDir = path.join(__dirname, 'cache/dll');
 const publicPath = isDev ? '/' : '/';
+
+if(!fs.existsSync(dllDir)) {
+  console.log('generating dll...')
+  execSync(`${path.resolve('./node_modules/.bin/cross-env')} NODE_ENV=development webpack --config webpack.dll.js`);
+  console.log('running webpack...')
+}
 
 const commonPlugins = [
   new HtmlWebpackPlugin({
@@ -23,7 +34,13 @@ const devPlugins = [
   new BundleAnalyzerPlugin({
     openAnalyzer: false
   }),
-  new FriendlyErrorsWebpackPlugin()
+  new FriendlyErrorsWebpackPlugin(),
+  new webpack.DllReferencePlugin({
+    manifest: require(path.resolve(dllDir, 'vendor-manifest.json'))
+  }),
+  new AddAssetHtmlPlugin({
+    filepath: path.resolve(dllDir, '*.dll.js'),
+  }),
 ];
 const prodPlugins = [
   new OptimizeCssAssetsPlugin({
@@ -35,12 +52,15 @@ const prodPlugins = [
 ];
 const plugins = isDev ? [...commonPlugins, ...devPlugins] : [...commonPlugins, ...prodPlugins];
 
+
+
 module.exports = {
   mode: isDev ? 'development' : 'production',
   entry: {
     index: ['react-hot-loader/patch', './src/index.tsx']
   },
   output: {
+    path: outputDir,
     publicPath
   },
   devServer: {
@@ -53,6 +73,9 @@ module.exports = {
     overlay: true
   },
   devtool: isDev ? 'source-map' : 'none',
+  optimization: {
+    // todo: DLLPlugin is for dev and splitChunks for prod, so add 'if else' here when config splitChunks
+  },
   module: {
     rules: [
       {
@@ -60,7 +83,10 @@ module.exports = {
         use: [
           'thread-loader',
           {
-            loader: 'babel-loader'
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true
+            }
           }
         ],
         exclude: /node_modules/
