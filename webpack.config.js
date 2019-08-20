@@ -85,7 +85,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              cacheDirectory: true
+              // cacheDirectory: true
             }
           }
         ],
@@ -127,10 +127,9 @@ module.exports = {
           }
         ]
       },
-      // import svg file as a react component
       {
         test: /\.svg$/,
-        use: ['@svgr/webpack']
+        use: ['@svgr/webpack'] // let us import svg file as a react component
       }
     ]
   },

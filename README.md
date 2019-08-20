@@ -11,6 +11,7 @@ This is a react template(or called starter) for typescript users, details below:
   - `@material-ui/icons` and babel setup for reducing bundle size
   - `react-router-dom`
 - support `sass`
+-  `core-js@3.x` for js polyfill
 
 ## 🥡 install
 
@@ -33,11 +34,11 @@ Option two (manually):
 
 ## 🥗notes
 
-- use alias to import files, current there are four alias available:
+- you can use these alias to import files, current there are four alias available:
 
   ```js
   import Img from '@images/apple.jpg';
   import Button from '@components/Button';
   import useCounter from '@hooks/useCounter';
-  import Index from '@pages/index/Index';
+  import Index from '@pages/index/Index'; 
   ```
