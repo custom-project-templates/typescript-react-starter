@@ -19,6 +19,6 @@
       "@hooks/*": ["./hooks/*"]
     }
   },
-  "include": ["src", "__tests__"],
+  "include": ["src", "__tests__", "__mocks__"],
   "exclude": ["node_modules"]
 }
