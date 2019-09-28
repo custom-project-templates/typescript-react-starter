@@ -3,7 +3,7 @@ import Img from '@images/apple.jpg';
 import Button from '@components/Button';
 import useCounter from '@hooks/useCounter';
 
-const Index: FunctionComponent<IProps> = ({}) => {
+const Index: FunctionComponent<IProps> = () => {
   const { count, dec, inc } = useCounter(0);
 
   return (

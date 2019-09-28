@@ -28,9 +28,9 @@ Option two (manually):
 ## 🍱 scripts
 
 - `npm run start` to start webpack-dev-server
-- `npm run build` to build
+- `npm run build` to build production code
 - `npm run test` to test
-- `npm run eslint-fix` to automatically fix all fixable errors
+- `npm run eslint:fix` to automatically fix all fixable errors
 
 ## 🥗notes
 

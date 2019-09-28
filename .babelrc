@@ -17,7 +17,24 @@
     "babel-plugin-styled-components",
     "@babel/plugin-transform-runtime",
     "transform-class-properties",
-    ["import", { "libraryName": "@material-ui/icons", "libraryDirectory": "esm", "camel2DashComponentName": false }],
+    [
+      "babel-plugin-import",
+      {
+        "libraryName": "@material-ui/core",
+        "libraryDirectory": "esm",
+        "camel2DashComponentName": false
+      },
+      "core"
+    ],
+    [
+      "babel-plugin-import",
+      {
+        "libraryName": "@material-ui/icons",
+        "libraryDirectory": "esm",
+        "camel2DashComponentName": false
+      },
+      "icons"
+    ],
     "react-hot-loader/babel"
   ]
 }
