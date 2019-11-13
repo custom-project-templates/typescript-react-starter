@@ -14,7 +14,12 @@
     "@babel/react"
   ],
   "plugins": [
-    "babel-plugin-styled-components",
+    [
+      "babel-plugin-styled-components",
+      {
+        "fileName": false
+      }
+    ],
     "@babel/plugin-transform-runtime",
     "transform-class-properties",
     [
