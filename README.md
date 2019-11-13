@@ -7,7 +7,7 @@ This is a react template(or called starter) for typescript users, details below:
 - use [this repo](https://github.com/XHMM/my-config-files) for lint setup
 - and includes these libraries:
   - `styled-components` and related babel plugin
-  - `@material-ui/core`, `@material-ui/styles`
+  - `@material-ui/core`
   - `@material-ui/icons` and babel setup for reducing bundle size
   - `react-router-dom`
 - support `sass`

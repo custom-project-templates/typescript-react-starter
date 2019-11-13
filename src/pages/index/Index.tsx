@@ -1,9 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import React, { FC } from 'react';
 import Img from '@images/apple.jpg';
 import Button from '@components/Button';
 import useCounter from '@hooks/useCounter';
 
-const Index: FunctionComponent<IProps> = () => {
+interface Props {}
+const Index: FC<Props> = () => {
   const { count, dec, inc } = useCounter(0);
 
   return (
@@ -17,6 +18,5 @@ const Index: FunctionComponent<IProps> = () => {
   );
 };
 
-interface IProps {}
 
 export default Index;

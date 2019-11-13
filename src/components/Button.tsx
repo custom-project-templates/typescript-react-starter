@@ -1,12 +1,13 @@
-import React, { FunctionComponent, MouseEventHandler } from 'react';
+import React, { FC, MouseEventHandler } from 'react';
 
-const Button: FunctionComponent<IProps> = ({ value, onClick }) => {
-  return <button onClick={onClick}>{value}</button>;
-};
-
-interface IProps {
+interface Props {
   value: string;
   onClick: MouseEventHandler;
 }
+const Button: FC<Props> = ({ value, onClick }) => {
+  return <button onClick={onClick}>{value}</button>;
+};
+
+
 
 export default Button;

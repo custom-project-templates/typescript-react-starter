@@ -1,6 +1,11 @@
 import { useState } from 'react';
 
-function useCounter(init: number): IUseCounterResult {
+interface UseCounterReturn {
+  count: number;
+  inc: () => void;
+  dec: () => void;
+}
+function useCounter(init: number): UseCounterReturn {
   const [count, setCount] = useState(init);
   function inc(): void {
     setCount(count => count + 1);
@@ -14,9 +19,5 @@ function useCounter(init: number): IUseCounterResult {
     dec
   };
 }
-interface IUseCounterResult {
-  count: number;
-  inc: () => void;
-  dec: () => void;
-}
+
 export default useCounter;
