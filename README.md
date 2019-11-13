@@ -37,8 +37,8 @@ Option two (manually):
 - you can use these alias to import files, current there are four alias available:
 
   ```js
-  import Img from '@images/apple.jpg';
-  import Button from '@components/Button';
-  import useCounter from '@hooks/useCounter';
-  import Index from '@pages/index/Index'; 
+  import Img from '~images/apple.jpg';
+  import Button from '~components/Button';
+  import useCounter from '~hooks/useCounter';
+  import Index from '~pages/index/Index'; 
   ```

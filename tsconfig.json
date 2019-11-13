@@ -15,10 +15,10 @@
     "noEmit": true,
     "baseUrl": "./src",
     "paths": {
-      "@images/*": ["./images/*"],
-      "@pages/*": ["./pages/*"],
-      "@components/*": ["./components/*"],
-      "@hooks/*": ["./hooks/*"]
+      "~images/*": ["./images/*"],
+      "~pages/*": ["./pages/*"],
+      "~components/*": ["./components/*"],
+      "~hooks/*": ["./hooks/*"]
     }
   },
   "include": ["src", "__tests__", "__mocks__"],

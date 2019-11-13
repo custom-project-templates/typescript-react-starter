@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import Img from '@images/apple.jpg';
-import Button from '@components/Button';
-import useCounter from '@hooks/useCounter';
+import Img from '~images/apple.jpg';
+import Button from '~components/Button';
+import useCounter from '~hooks/useCounter';
 
 interface Props {}
 const Index: FC<Props> = () => {
