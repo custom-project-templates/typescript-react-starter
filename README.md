@@ -2,6 +2,8 @@
 
 This is a react template(or called starter) for typescript users, details below:
 
+**warning:** this repo will try best to keep dependencies the latest and all work well, it doesn't take back-compatibility into consideration.
+
 - use `babel` for `typescript` compile
 - use `jest` and `@testing-library/react` for test
 - use [this repo](https://github.com/XHMM/my-config-files) for lint setup
