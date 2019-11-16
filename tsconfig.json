@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "esnext",
     "moduleResolution": "node",
-    "lib": ["dom", "es6", "es7"],
+    "lib": ["dom", "dom.iterable","es2015", "es2016", "es2018"],
     "jsx": "react",
     "esModuleInterop": true, // don't omit this, or react-testing-library will fail "Cannot read property 'createElement' of undefined"
     "noUnusedLocals": true,
