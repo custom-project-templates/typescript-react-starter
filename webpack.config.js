@@ -9,6 +9,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 const outputDir = path.join(__dirname, 'build');
@@ -28,6 +29,7 @@ const commonPlugins = [
   }),
   new CleanWebpackPlugin(),
   new MiniCssExtractPlugin(),
+  new LodashModuleReplacementPlugin
 ];
 const devPlugins = [
   new BundleAnalyzerPlugin({

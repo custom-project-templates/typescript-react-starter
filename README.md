@@ -12,6 +12,7 @@ This is a react template(or called starter) for typescript users, details below:
   - `@material-ui/core`
   - `@material-ui/icons` and babel setup for reducing bundle size
   - `react-router-dom`
+  - `lodash` and tree-shaking support
 - support `sass`
 -  `core-js@3.x` for js polyfill
 

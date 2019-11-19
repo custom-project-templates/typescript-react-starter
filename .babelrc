@@ -42,6 +42,7 @@
       },
       "icons"
     ],
-    "react-hot-loader/babel"
+    "react-hot-loader/babel",
+    "lodash"
   ]
 }
