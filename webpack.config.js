@@ -28,7 +28,9 @@ const commonPlugins = [
     filename: './index.html',
   }),
   new CleanWebpackPlugin(),
-  new MiniCssExtractPlugin(),
+  new MiniCssExtractPlugin({
+    filename: isProd ? '[name].[contenthash].css' : '[name].css',
+  }),
   new LodashModuleReplacementPlugin
 ];
 const devPlugins = [
@@ -59,6 +61,7 @@ const config = {
     index: ['react-hot-loader/patch', './src/index.tsx'],
   },
   output: {
+    filename: isProd ? '[name].[chunkhash].js' : '[name].js',
     path: outputDir,
     publicPath,
   },
