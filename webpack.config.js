@@ -71,9 +71,17 @@ const config = {
     compress: true,
     overlay: true,
   },
-  devtool: isProd ? 'none' : 'source-map',
+  // devtool: isProd ? 'none' : 'source-map',
   optimization: {
-    // todo: DLLPlugin is for dev and splitChunks for prod, so add 'if else' here when config splitChunks
+    splitChunks: {
+      cacheGroups: {
+        reactLibs: {
+          test: /[\\/]node_modules[\\/](react|react-dom)/,
+          chunks: 'all',
+          name: 'libs'
+        }
+      },
+    }
   },
   module: {
     rules: [
