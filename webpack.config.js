@@ -23,6 +23,9 @@ if (!fs.existsSync(dllDir)) {
 }
 
 const commonPlugins = [
+  new BundleAnalyzerPlugin({
+    openAnalyzer: false,
+  }),
   new HtmlWebpackPlugin({
     template: './src/index.html',
     filename: './index.html',
@@ -34,9 +37,6 @@ const commonPlugins = [
   new LodashModuleReplacementPlugin
 ];
 const devPlugins = [
-  new BundleAnalyzerPlugin({
-    openAnalyzer: false,
-  }),
   new FriendlyErrorsWebpackPlugin(),
   new webpack.DllReferencePlugin({
     manifest: require(path.resolve(dllDir, 'vendor-manifest.json')),
@@ -77,12 +77,13 @@ const config = {
   // devtool: isProd ? 'none' : 'source-map',
   optimization: {
     splitChunks: {
+      minSize: 0,
       cacheGroups: {
         reactLibs: {
-          test: /[\\/]node_modules[\\/](react|react-dom)/,
           chunks: 'all',
+          test: /[\\/]node_modules[\\/](react|@hot-loader[\\/]react-dom|react-dom)/,
           name: 'libs'
-        }
+        },
       },
     }
   },
@@ -108,7 +109,7 @@ const config = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: isProd,
+              hmr: !isProd,
             },
           },
           'css-loader',
