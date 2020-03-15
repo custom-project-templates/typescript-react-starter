@@ -13,12 +13,12 @@
     "alwaysStrict": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "~images/*": ["./images/*"],
-      "~pages/*": ["./pages/*"],
-      "~components/*": ["./components/*"],
-      "~hooks/*": ["./hooks/*"]
+      "~images/*": ["./src/images/*"],
+      "~pages/*": ["./src/pages/*"],
+      "~components/*": ["./src/components/*"],
+      "~hooks/*": ["./src/hooks/*"]
     }
   },
   "include": ["src", "__tests__", "__mocks__", "./Index.test.tsx"],
